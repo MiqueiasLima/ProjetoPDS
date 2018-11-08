@@ -12,15 +12,11 @@ import java.util.Date;
  * @author Miqueias
  */
 public class Partida {
-    public static void main(String[] args) {
-        Date date = new Date();
-        
-        
-        System.out.println(date.after(date));
-    }
+   
+   private Time timeCasa;
+   private Time timeFora;
+   private String resultado;
+   private String competicao;
     
+  }
     
-    
-    
-
-}

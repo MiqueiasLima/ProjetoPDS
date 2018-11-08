@@ -25,4 +25,8 @@ public class Desempenho {
     private int drible;
     private Jogador jogador;
     
+    
+    public void addJogador(){
+    
+    }
 }

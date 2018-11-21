@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package desempenhotecnicodeumatleta;
+package model;
 
 /**
  *
- * @author Miqueias
+ * @author aluno
  */
-public class Time {
-    
-    private String nome;
-    private int[] jogadores;
-    
+public class Main {
     
 }

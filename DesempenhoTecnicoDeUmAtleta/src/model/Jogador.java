@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package desempenhotecnicodeumatleta;
-
-import java.util.Date;
+package model;
 
 /**
  *
  * @author Miqueias
  */
-public class Partida {
-   
-   private Time timeCasa;
-   private Time timeFora;
-   private String resultado;
-   private String competicao;
+public class Jogador {
+
+    private String nome;
+    private int idade;
+    private String posicao;
+    private int numero_uniforme;
+    private char melhor_pe;
     
-  }
-    
+}

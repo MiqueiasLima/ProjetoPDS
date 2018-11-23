@@ -15,6 +15,10 @@ public class Time {
     private int id;
     private String nome;
     private int[] jogadores;
+    
+    public Time(){
+    
+    }
 
     public String getNome() {
         return nome;

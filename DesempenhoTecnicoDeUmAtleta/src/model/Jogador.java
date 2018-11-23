@@ -18,7 +18,19 @@ public class Jogador {
     private int numero_uniforme;
     private char melhor_pe;
 
+    public Jogador(){
+    
+    }
+    
     public Jogador( String nome, int idade, String posicao, int numero_uniforme, char melhor_pe) {
+       
+        this.nome = nome;
+        this.idade = idade;
+        this.posicao = posicao;
+        this.numero_uniforme = numero_uniforme;
+        this.melhor_pe = melhor_pe;
+    }
+    public void CadastrarJogador( String nome, int idade, String posicao, int numero_uniforme, char melhor_pe) {
        
         this.nome = nome;
         this.idade = idade;

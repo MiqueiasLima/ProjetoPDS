@@ -27,6 +27,9 @@ public class Desempenho {
     private Jogador jogador;
     private Partida partida;
     
+    public Desempenho(){
+    
+    }
     
     
     public void addJogador(){

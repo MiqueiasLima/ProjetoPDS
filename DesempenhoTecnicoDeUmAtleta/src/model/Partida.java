@@ -59,7 +59,12 @@ public class Partida {
        
    }
    
-      public void  cadastarPartida(String timeCasa,String timeFora, String Resultado,String competicao
+   
+    public Partida(){
+    }
+   
+   
+      public void  cadastrarPartida(String timeCasa,String timeFora, String Resultado,String competicao
      ,String tipoDeJogo){
        
        this.setTimeCasa(timeCasa);

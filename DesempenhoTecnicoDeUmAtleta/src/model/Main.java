@@ -7,7 +7,9 @@ package model;
 
 /**
  *
- * @author aluno
+ * @author Ismael
+ * @author Evamberto
+ * @author Miqueias
  */
 public class Main {
     

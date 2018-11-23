@@ -5,18 +5,81 @@
  */
 package model;
 
-import java.util.Date;
-
 /**
- *
+ * @author Evamberto
  * @author Miqueias
+ * @author Ismael
  */
 public class Partida {
    
-   private Time timeCasa;
-   private Time timeFora;
+   private int id;
+   private String timeCasa;
+   private String timeFora;
    private String resultado;
    private String competicao;
+
+    public String getTimeCasa() {
+        return timeCasa;
+    }
+
+    public void setTimeCasa(String timeCasa) {
+        this.timeCasa = timeCasa;
+    }
+
+    public String getTimeFora() {
+        return timeFora;
+    }
+
+    public void setTimeFora(String timeFora) {
+        this.timeFora = timeFora;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public String getCompeticao() {
+        return competicao;
+    }
+
+    public void setCompeticao(String competicao) {
+        this.competicao = competicao;
+    }
+   public  Partida(String timeCasa,String timeFora, String Resultado,String competicao
+   ,String tipoDeJogo){
+       
+       this.setTimeCasa(timeCasa);
+       this.setTimeFora(timeFora);
+       this.setResultado(Resultado);
+       this.setCompeticao(competicao);
+       
+   }
+   
+      public void  cadastarPartida(String timeCasa,String timeFora, String Resultado,String competicao
+     ,String tipoDeJogo){
+       
+       this.setTimeCasa(timeCasa);
+       this.setTimeFora(timeFora);
+       this.setResultado(Resultado);
+       this.setCompeticao(competicao);
+       
+   }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+   
+      
+   
+   
     
   }
     

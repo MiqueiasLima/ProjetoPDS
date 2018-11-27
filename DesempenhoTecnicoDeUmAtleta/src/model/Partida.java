@@ -16,8 +16,23 @@ public class Partida {
    private String timeCasa;
    private String timeFora;
    private String resultado;
-   private String competicao;
+   private String tipoDeJogo;
+   private String horario;
+   private String localDaPartida;
+   private String data;
 
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+   
+   
+   
+   
+   
     public String getTimeCasa() {
         return timeCasa;
     }
@@ -42,20 +57,32 @@ public class Partida {
         this.resultado = resultado;
     }
 
-    public String getCompeticao() {
-        return competicao;
+    public String getLocalDaPartida() {
+        return localDaPartida;
     }
 
-    public void setCompeticao(String competicao) {
-        this.competicao = competicao;
+    public void setLocalDaPartida(String localDaPartida) {
+        this.localDaPartida = localDaPartida;
     }
+
+ 
+
+    public String getTipoDeJogo() {
+        return tipoDeJogo;
+    }
+
+    public void setTipoDeJogo(String tipoDeJogo) {
+        this.tipoDeJogo = tipoDeJogo;
+    }
+    
+    
    public  Partida(String timeCasa,String timeFora, String Resultado,String competicao
    ,String tipoDeJogo){
        
        this.setTimeCasa(timeCasa);
        this.setTimeFora(timeFora);
        this.setResultado(Resultado);
-       this.setCompeticao(competicao);
+       
        
    }
    
@@ -70,7 +97,7 @@ public class Partida {
        this.setTimeCasa(timeCasa);
        this.setTimeFora(timeFora);
        this.setResultado(Resultado);
-       this.setCompeticao(competicao);
+       
        
    }
 
@@ -80,6 +107,19 @@ public class Partida {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    @Override
+    public String toString() {
+        return  "id=" + id + ", timeCasa=" + timeCasa + ", timeFora=" + timeFora + ", resultado=" + resultado + ", tipoDeJogo=" + tipoDeJogo + ", horario=" + horario + ", localDaPartida=" + localDaPartida + ", data=" + data ;
     }
    
       

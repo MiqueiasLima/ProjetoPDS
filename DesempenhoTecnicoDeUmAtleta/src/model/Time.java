@@ -20,6 +20,16 @@ public class Time {
     
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
+
     public String getNome() {
         return nome;
     }
@@ -56,6 +66,11 @@ public class Time {
         this.nome = nome;
         this.jogadores = jogadores;
         
+    }
+
+    @Override
+    public String toString() {
+        return  "id=" + id + ", nome=" + nome + ", jogadores=" + jogadores;
     }
     
     

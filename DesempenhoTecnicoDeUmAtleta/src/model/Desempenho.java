@@ -6,8 +6,9 @@
 package model;
 
 /**
- *
+ * @author  Evamberto
  * @author Miqueias
+ * @author Ismael
  */
 public class Desempenho {
     
@@ -193,6 +194,11 @@ public class Desempenho {
 
     public void setPartida(Partida partida) {
         this.partida = partida;
+    }
+
+    @Override
+    public String toString() {
+        return  "id=" + id + ", totalDePasses=" + totalDePasses + ", passesCertos=" + passesCertos + ", passesErrados=" + passesErrados + ", finalizacoesTotais=" + finalizacoesTotais + ", finalizacoesGols=" + finalizacoesGols + ", dominioTotal=" + dominioTotal + ", dominioCerto=" + dominioCerto + ", dominioErrado=" + dominioErrado + ", desarme=" + desarme + ", gol=" + gol + ", assistencia=" + assistencia + ", drible=" + drible + ", jogador=" + jogador + ", partida=" + partida;
     }
     
     

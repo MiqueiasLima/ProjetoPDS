@@ -13,10 +13,12 @@ public class Jogador {
 
     private int id;
     private String nome;
-    private int idade;
+    
     private String posicao;
+    private String DataDeNascimento;
     private int numero_uniforme;
     private char melhor_pe;
+    private Time time;
 
     public Jogador(){
     
@@ -25,7 +27,7 @@ public class Jogador {
     public Jogador( String nome, int idade, String posicao, int numero_uniforme, char melhor_pe) {
        
         this.nome = nome;
-        this.idade = idade;
+        
         this.posicao = posicao;
         this.numero_uniforme = numero_uniforme;
         this.melhor_pe = melhor_pe;
@@ -33,7 +35,7 @@ public class Jogador {
     public void CadastrarJogador( String nome, int idade, String posicao, int numero_uniforme, char melhor_pe) {
        
         this.nome = nome;
-        this.idade = idade;
+        
         this.posicao = posicao;
         this.numero_uniforme = numero_uniforme;
         this.melhor_pe = melhor_pe;
@@ -50,13 +52,8 @@ public class Jogador {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
-    }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+
 
     public String getPosicao() {
         return posicao;
@@ -81,6 +78,39 @@ public class Jogador {
     public void setMelhor_pe(char melhor_pe) {
         this.melhor_pe = melhor_pe;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDataDeNascimento() {
+        return DataDeNascimento;
+    }
+
+    public void setDataDeNascimento(String DataDeNascimento) {
+        this.DataDeNascimento = DataDeNascimento;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", nome=" + nome + ", posicao=" + posicao + ", DataDeNascimento=" + DataDeNascimento + ", numero_uniforme=" + numero_uniforme + ", melhor_pe=" + melhor_pe + ", time=" + time;
+    }
+    
+    
+    
+
     
     
     

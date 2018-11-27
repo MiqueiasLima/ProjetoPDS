@@ -12,5 +12,8 @@ package model;
  * @author Miqueias
  */
 public class Main {
+    public static void main(String[] args) {
+        
+    }
     
 }

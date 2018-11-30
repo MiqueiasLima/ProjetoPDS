@@ -5,16 +5,25 @@
  */
 package model;
 
+import com.itextpdf.text.Document;
+
 /**
  *
  * @author jose
  */
 public class RelatorioEquipe extends Relatorio{
-    
+
     @Override
-    public void fazerRelatorioEquipe(){
-    
+    public Document corpo(Document documento) {
+     return documento;   
     }
+
+    @Override
+    public Document rodaPe(Document documento) {
+       return documento;
+    }
+    
+   
     
     
     

@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  * @author  Evamberto
  * @author Miqueias
@@ -27,6 +29,8 @@ public class Desempenho {
     private int drible;
     private Jogador jogador;
     private Partida partida;
+    
+   
     
     public Desempenho(){
     

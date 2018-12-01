@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jose
@@ -24,7 +26,20 @@ public class Facade {
         this.desempenho=new Desempenho();
     }
     
+     private ArrayList<Observer> observadores = new ArrayList<>();
     
+    public void notifyAllTo(){
+        for(int i = 0; i < observadores.size(); i++){
+            observadores.get(i).update();
+        }
+    }
+    public void attach(Observer observer){
+        this.observadores.add(observer);
+    }
+    
+    public void dettach(Observer observer){
+        this.observadores.remove(observer);
+    }
     
     
     //fazer cadastrar,alterar e remover partida
@@ -77,8 +92,12 @@ public class Facade {
     
     }
     
-    public void alterarDesempenho(){
-    
+    public void alterarDesempenho(String nome, String passesTotais, String passesCertos, String passesErrados,
+                                            String finalizacoesTotais, String finalizacaoGols, String dominioTotal,
+                                            String dominioCerto, String dominioErrado, String desarme, String gol,
+                                            String assistencia, String partida, String drible){
+        
+       
     }
     
     public void excluirJogador(){

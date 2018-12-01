@@ -5,17 +5,84 @@
  */
 package view;
 
+import Controller.ControllerCadastroJogador;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import model.Facade;
+import model.Observer;
+
 /**
  *
  * @author aluno
  */
-public class viewCadastrar extends javax.swing.JFrame {
+public class ViewCadastrarJogador extends javax.swing.JFrame implements Observer {
 
-    /**
-     * Creates new form viewCadastrar
-     */
-    public viewCadastrar() {
+    Facade modelo;
+    ControllerCadastroJogador controllerJogador;
+    
+    public ViewCadastrarJogador(Facade modelo) {
         initComponents();
+        
+        this.modelo = modelo;
+        this.controllerJogador = new ControllerCadastroJogador(modelo,this);
+        modelo.attach(this);
+       
+        
+    }
+
+    public JButton getBtnCadastrarJogador1() {
+        return btnCadastrarJogador1;
+    }
+
+    public void setBtnCadastrarJogador1(JButton btnCadastrarJogador1) {
+        this.btnCadastrarJogador1 = btnCadastrarJogador1;
+    }
+
+    public JButton getBtnFechar() {
+        return btnFechar;
+    }
+
+    public void setBtnFechar(JButton btnFechar) {
+        this.btnFechar = btnFechar;
+    }
+  
+    
+    public ViewCadastrarJogador() {
+        initComponents();
+    }
+
+    public JComboBox getjMelhorPe() {
+        return jMelhorPe;
+    }
+
+    public void setjMelhorPe(JComboBox jMelhorPe) {
+        this.jMelhorPe = jMelhorPe;
+    }
+
+    public JTextField getTxtNome() {
+        return txtNome;
+    }
+
+    public void setTxtNome(JTextField txtNome) {
+        this.txtNome = txtNome;
+    }
+
+    public JTextField getTxt_Posicao() {
+        return txt_Posicao;
+    }
+
+    public void setTxt_Posicao(JTextField txt_Posicao) {
+        this.txt_Posicao = txt_Posicao;
+    }
+
+    public JLabel getLb_nasc() {
+        return lb_nasc;
+    }
+
+    public void setLb_nasc(JLabel lb_nasc) {
+        this.lb_nasc = lb_nasc;
     }
 
     /**
@@ -36,14 +103,17 @@ public class viewCadastrar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txt_Posicao = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jMelhorPe = new javax.swing.JComboBox();
         jFormatado = new javax.swing.JFormattedTextField();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnCadastrarJogador1 = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Cadastrar Jogador");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         lb_Nome.setText("Nome:");
 
@@ -53,7 +123,7 @@ public class viewCadastrar extends javax.swing.JFrame {
 
         jLabel3.setText("Melhor  Pé:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "D", "E" }));
+        jMelhorPe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "D", "E" }));
 
         jFormatado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG))));
 
@@ -72,7 +142,7 @@ public class viewCadastrar extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNome)
                     .addComponent(txt_Posicao)
-                    .addComponent(jComboBox1, 0, 198, Short.MAX_VALUE)
+                    .addComponent(jMelhorPe, 0, 198, Short.MAX_VALUE)
                     .addComponent(jFormatado))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -94,7 +164,7 @@ public class viewCadastrar extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jMelhorPe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
 
@@ -121,24 +191,35 @@ public class viewCadastrar extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("Cadastrar");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(43, 43, 43))
+            .addGap(0, 170, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addGap(0, 55, Short.MAX_VALUE)
         );
+
+        btnCadastrarJogador1.setText("Cadastrar");
+        btnCadastrarJogador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarJogador1ActionPerformed(evt);
+            }
+        });
+
+        btnFechar.setText("Fechar");
+        btnFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFecharMouseClicked(evt);
+            }
+        });
+        btnFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFecharActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,63 +233,56 @@ public class viewCadastrar extends javax.swing.JFrame {
                         .addGap(113, 113, 113))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))))
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCadastrarJogador1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFechar)
+                        .addGap(123, 123, 123))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFechar)
+                    .addComponent(btnCadastrarJogador1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCadastrarJogador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarJogador1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarJogador1ActionPerformed
+
+    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+            this.controllerJogador.trataEvt(evt);
+    }//GEN-LAST:event_btnFecharActionPerformed
+
+    private void btnFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFecharMouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFecharMouseClicked
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewCadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewCadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewCadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewCadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new viewCadastrar().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton btnCadastrarJogador1;
+    private javax.swing.JButton btnFechar;
     private javax.swing.JFormattedTextField jFormatado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JComboBox jMelhorPe;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -217,4 +291,9 @@ public class viewCadastrar extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txt_Posicao;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

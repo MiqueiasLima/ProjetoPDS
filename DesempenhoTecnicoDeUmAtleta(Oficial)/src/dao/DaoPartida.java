@@ -10,8 +10,7 @@ import connectionPool.ConnectionPool;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import model.Partida;
 
 /**
@@ -25,7 +24,7 @@ public class DaoPartida implements Dao{
     private Conexao conexao;
     
     public DaoPartida(){
-        this.pool=new ConnectionPool("jdbc:mysql://localhost:3306/db_sport", "root", "peken", "com.mysql.jdbc.Driver");
+        this.pool=new ConnectionPool("jdbc:mysql://localhost:3306/mydb", "root", "peken", "com.mysql.jdbc.Driver");
     }
     
     @Override

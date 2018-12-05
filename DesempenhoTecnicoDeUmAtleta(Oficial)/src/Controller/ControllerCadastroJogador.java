@@ -19,8 +19,8 @@ import view.ViewCadastrarJogador;
  */
 public class ControllerCadastroJogador implements Observer {
 
-    Facade modelo;
-    ViewCadastrarJogador viewCdastroJogador;
+   private Facade modelo;
+    private ViewCadastrarJogador viewCdastroJogador;
     private int id;
 
     public ControllerCadastroJogador(Facade modelo, ViewCadastrarJogador viewCdastroJogador) {

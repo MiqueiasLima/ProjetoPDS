@@ -140,6 +140,7 @@ public class Facade {
 
     public void cadastrarDesempenho( int passesCertos, int passesErrados, int finalizacoesGols, int dominioTotal, int dominioCerto, int dominioErrado, int desarme, int gol,
             int assistencia, int drible, Jogador jogador, Partida partida) {
+        
 
         this.getDesempenho().cadastrarDesempenho( passesCertos, passesErrados, finalizacoesGols, dominioTotal, dominioCerto, dominioErrado, desarme, gol, assistencia, drible, jogador, partida);
         this.notifyAllTo();

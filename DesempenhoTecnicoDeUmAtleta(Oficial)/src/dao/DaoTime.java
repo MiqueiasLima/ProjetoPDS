@@ -23,7 +23,7 @@ public class DaoTime implements Dao {
 
     public DaoTime() {
 
-        this.pool = new ConnectionPool("jdbc:mysql://localhost:3306/db_sport", "root", "peken", "com.mysql.jdbc.Driver");
+        this.pool = new ConnectionPool("jdbc:mysql://localhost:3306/mydb", "root", "peken", "com.mysql.jdbc.Driver");
 
     }
 

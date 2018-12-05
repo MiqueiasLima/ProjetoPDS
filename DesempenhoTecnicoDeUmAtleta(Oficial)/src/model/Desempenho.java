@@ -83,6 +83,9 @@ public class Desempenho {
         desempenho.setJogador(jogador);
         desempenho.setPartida(partida);
         
+   
+        
+        
         this.getDaoDesempenho().inserir(desempenho);
         
         

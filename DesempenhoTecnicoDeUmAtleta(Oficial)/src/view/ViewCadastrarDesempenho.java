@@ -123,7 +123,6 @@ private DefaultListModel defaultListModel = new DefaultListModel();
         btnExcluir = new javax.swing.JButton();
         btnCadastrarDesempenho = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        mostrarDesempenho = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
 
@@ -184,6 +183,11 @@ private DefaultListModel defaultListModel = new DefaultListModel();
         jComboPartida1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jComboPartida1MouseClicked(evt);
+            }
+        });
+        jComboPartida1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboPartida1ActionPerformed(evt);
             }
         });
 
@@ -400,29 +404,20 @@ private DefaultListModel defaultListModel = new DefaultListModel();
             }
         });
 
-        mostrarDesempenho.setText("Mostrar Desempenho");
-        mostrarDesempenho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarDesempenhoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(btnCadastrarDesempenho, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mostrarDesempenho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addComponent(btnAlterar)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(btnExcluir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addComponent(btnCancelar)
-                .addGap(31, 31, 31))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,9 +427,8 @@ private DefaultListModel defaultListModel = new DefaultListModel();
                     .addComponent(btnAlterar)
                     .addComponent(btnExcluir)
                     .addComponent(btnCancelar)
-                    .addComponent(mostrarDesempenho)
                     .addComponent(btnCadastrarDesempenho))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bola.png"))); // NOI18N
@@ -469,11 +463,10 @@ private DefaultListModel defaultListModel = new DefaultListModel();
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -482,7 +475,7 @@ private DefaultListModel defaultListModel = new DefaultListModel();
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(55, 55, 55)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -555,10 +548,11 @@ private DefaultListModel defaultListModel = new DefaultListModel();
         
     }//GEN-LAST:event_jComboPartida1MouseClicked
 
-    private void mostrarDesempenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarDesempenhoActionPerformed
+    private void jComboPartida1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboPartida1ActionPerformed
         // TODO add your handling code here:
+        
         this.controllerDesempenho.trataEvento(evt);
-    }//GEN-LAST:event_mostrarDesempenhoActionPerformed
+    }//GEN-LAST:event_jComboPartida1ActionPerformed
 
     public JTextField getjAssistencia() {
         return jAssistencia;
@@ -704,12 +698,11 @@ private DefaultListModel defaultListModel = new DefaultListModel();
     private javax.swing.JTextField jPassesTotais;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label_nome;
-    private javax.swing.JButton mostrarDesempenho;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void update() {
-      //  this.atualizarList();
+        this.atualizarList();
           
        this.nomearCboxJogador();
        this.nomearCboxPartida();

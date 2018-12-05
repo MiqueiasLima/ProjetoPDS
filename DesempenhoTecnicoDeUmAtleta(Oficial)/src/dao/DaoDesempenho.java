@@ -23,14 +23,14 @@ public class DaoDesempenho  implements Dao{
     private ConnectionPool pool;
     private Conexao conexao;
     public DaoDesempenho(){
-        this.pool= new ConnectionPool("jdbc:mysql://localhost:3306/db_sport", "root", "peken", "com.mysql.jdbc.Driver");
+        this.pool= new ConnectionPool("jdbc:mysql://localhost:3306/mydb", "root", "peken", "com.mysql.jdbc.Driver");
     }
 
     @Override
     public boolean inserir(Object object) {
         
         Desempenho desempenho = (Desempenho) object;
-        
+             
      
         this.conexao=this.pool.getConnection();
         String sql=" INSERT INTO desempenho (passesTotais,passesCertos,passesErrados,finalizacoesTotais,finalizacoesGols,dominioTotal,dominioCerto,dominioErrado,desarme,gol"
@@ -53,6 +53,7 @@ public class DaoDesempenho  implements Dao{
             this.conexao.getStmt().setInt(11, desempenho.getAssistencia());
             this.conexao.getStmt().setInt(12, desempenho.getDrible());
             this.conexao.getStmt().setInt(13, desempenho.getPartida().getId());
+           
             this.conexao.getStmt().setInt(14, desempenho.getJogador().getId());
             this.conexao.getStmt().execute();
             
@@ -191,15 +192,15 @@ public class DaoDesempenho  implements Dao{
        ArrayList<Desempenho> lista = new ArrayList();
        
        this.conexao=this.pool.getConnection();
-       String sql ="select nome,passesCertos,passesErrados,passesTotais from jogador INNER JOIN partida ON partida.id=?  INNER JOIN  desempenho ON desempenho.id=? WHERE jogador.time_id=? ";
+       String sql ="select nome,passesCertos,passesErrados,passesTotais from jogador INNER JOIN desempenho ON desempenho.jogador_id=jogador.id where desempenho.partida_id=? ";
        
         try {
             
             
             this.conexao.setStmt(this.conexao.getConexaoBd().prepareStatement(sql));
             this.conexao.getStmt().setInt(1,partida1.getId());
-            this.conexao.getStmt().setInt(2,partida1.getId());
-            this.conexao.getStmt().setInt(3,time.getId());
+            
+            
             this.conexao.setRs(this.conexao.getStmt().executeQuery());
             
             while(this.conexao.getRs().next()){
@@ -233,15 +234,14 @@ public class DaoDesempenho  implements Dao{
        ArrayList<Desempenho> lista = new ArrayList();
        
        this.conexao=this.pool.getConnection();
-       String sql ="select nome,dominioCerto, dominioErrado,dominioTotal from jogador INNER JOIN partida ON partida.id=?  INNER JOIN  desempenho ON desempenho.id=? WHERE jogador.time_id=? ";
+       String sql ="select nome,dominioCerto, dominioErrado,dominioTotal  from jogador INNER JOIN desempenho ON desempenho.jogador_id=jogador.id where desempenho.partida_id=? ";
        
         try {
             
             
             this.conexao.setStmt(this.conexao.getConexaoBd().prepareStatement(sql));
             this.conexao.getStmt().setInt(1,partida1.getId());
-            this.conexao.getStmt().setInt(2,partida1.getId());
-            this.conexao.getStmt().setInt(3,time.getId());
+          
             this.conexao.setRs(this.conexao.getStmt().executeQuery());
             
             while(this.conexao.getRs().next()){
@@ -276,15 +276,14 @@ public class DaoDesempenho  implements Dao{
        ArrayList<Desempenho> lista = new ArrayList();
        
        this.conexao=this.pool.getConnection();
-       String sql ="select nome,drible,assistencia,desarme,gol,finalizacoesGols,finalizacoesTotais from jogador INNER JOIN partida ON partida.id=?  INNER JOIN  desempenho ON desempenho.id=? WHERE jogador.time_id=? ";
+       String sql ="select nome,drible,assistencia,desarme,gol,finalizacoesGols,finalizacoesTotais  from jogador INNER JOIN desempenho ON desempenho.jogador_id=jogador.id where desempenho.partida_id=? ";
        
         try {
             
             
             this.conexao.setStmt(this.conexao.getConexaoBd().prepareStatement(sql));
             this.conexao.getStmt().setInt(1,partida1.getId());
-            this.conexao.getStmt().setInt(2,partida1.getId());
-            this.conexao.getStmt().setInt(3,time.getId());
+
             this.conexao.setRs(this.conexao.getStmt().executeQuery());
             
             while(this.conexao.getRs().next()){

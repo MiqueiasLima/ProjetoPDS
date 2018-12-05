@@ -26,7 +26,7 @@ public class DaoJogador implements Dao {
     private Conexao conexao;
     
     public DaoJogador(){
-       this.pool=new ConnectionPool("jdbc:mysql://localhost:3306/db_sport", "root", "peken", "com.mysql.jdbc.Driver");
+       this.pool=new ConnectionPool("jdbc:mysql://localhost:3306/mydb", "root", "peken", "com.mysql.jdbc.Driver");
     }
     
     @Override
